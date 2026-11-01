@@ -1,9 +1,29 @@
 /**
- * Monochrome placeholder imagery. Flat grey renders standing in for photography
- * of the real equipment. Every plate is labelled as a placeholder.
+ * Site imagery. Kinds listed in PHOTOS render the real image from
+ * public/images; the rest fall back to flat grey renders labelled as placeholders.
  */
 
+import Image from 'next/image';
+
 export type PlateKind = 'station-night' | 'station' | 'enclosures' | 'cabinet' | 'transformer' | 'line' | 'portrait';
+
+const PHOTOS: Partial<Record<PlateKind, { src: string; alt: string; position?: string }>> = {
+  'station-night': {
+    src: '/images/hero-station.webp',
+    alt: 'A battery station at night beside a transmission tower, its enclosures lit by thin strips of light',
+    position: '70% 100%',
+  },
+  station: {
+    src: '/images/station.webp',
+    alt: 'A row of battery enclosures and an inverter building beside a high-voltage transmission tower',
+    position: '50% 70%',
+  },
+  transformer: {
+    src: '/images/transformer.webp',
+    alt: 'A power transformer with three high-voltage bushings inside a fenced substation',
+    position: '50% 45%',
+  },
+};
 
 const LABELS: Record<PlateKind, string> = {
   'station-night': 'Energized station',
@@ -134,7 +154,28 @@ function Art({ kind }: { kind: PlateKind }) {
   }
 }
 
-export function Plate({ kind, className = '', label = true }: { kind: PlateKind; className?: string; label?: boolean }) {
+export function Plate({
+  kind,
+  className = '',
+  label = true,
+  priority = false,
+  sizes = '100vw',
+}: {
+  kind: PlateKind;
+  className?: string;
+  label?: boolean;
+  priority?: boolean;
+  sizes?: string;
+}) {
+  const photo = PHOTOS[kind];
+  if (photo) {
+    return (
+      <div className={`relative overflow-hidden ${className}`}>
+        <Image src={photo.src} alt={photo.alt} fill priority={priority} sizes={sizes} className="object-cover" style={{ objectPosition: photo.position }} />
+      </div>
+    );
+  }
+
   const dark = kind === 'station-night';
   return (
     <div className={`relative overflow-hidden ${className}`} role="img" aria-label={`Placeholder image: ${LABELS[kind]}`}>

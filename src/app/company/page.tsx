@@ -30,7 +30,7 @@ export default function CompanyPage() {
             <span className="mr-4 text-ground">02</span>Leadership
           </p>
           <div data-reveal className="col-span-8 md:col-span-4">
-            <Plate kind="portrait" className="aspect-[4/5] w-full" />
+            <Plate kind="portrait" className="aspect-[4/5] w-full" sizes="(min-width: 768px) 33vw, 66vw" />
           </div>
           <div data-reveal className="col-span-12 md:col-span-5">
             <p className="label text-ground/70">Founder and Chief Executive</p>

@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero: the page's one dark band */}
       <section className="relative flex min-h-[calc(100svh-6rem)] flex-col overflow-hidden bg-band text-ground">
         <div className="absolute inset-0">
-          <Plate kind="station-night" className="h-full w-full" />
+          <Plate kind="station-night" className="h-full w-full" priority />
         </div>
         <HumFilter target="#hero-title" />
         <div className="grid-12 relative gap-y-8 pt-20 md:pt-28">

@@ -23,7 +23,7 @@ export default function PlatformPage() {
           <p className="label col-span-12 text-mute">Platform</p>
           <h1 className="headline col-span-12 text-[16vw] md:text-[11vw] 2xl:text-[180px]">The Peak Station</h1>
         </div>
-        <Plate kind="transformer" className="min-h-[50svh] w-full flex-1" />
+        <Plate kind="transformer" className="min-h-[50svh] w-full flex-1" priority />
       </section>
 
       {MODULES.map((m, i) => (
@@ -41,7 +41,7 @@ export default function PlatformPage() {
               </p>
             </div>
             <div data-reveal className={`col-span-12 md:col-span-7 ${i % 2 ? 'md:order-1' : 'md:col-start-6'}`}>
-              <Plate kind={m.plate} className="aspect-[4/3] w-full" />
+              <Plate kind={m.plate} className="aspect-[4/3] w-full" sizes="(min-width: 768px) 58vw, 100vw" />
             </div>
           </div>
         </section>
