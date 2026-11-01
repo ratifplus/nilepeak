@@ -21,7 +21,7 @@ export default function TechnologyPage() {
       <section className="screen border-t border-rule">
         <div className="grid-12 gap-y-10">
           <p className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-ink">01</span>Waveform
+            <span className="mr-4 text-navy">01</span>Waveform
           </p>
           <div className="col-span-12 md:col-span-9">
             <Waveform />

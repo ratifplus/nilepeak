@@ -49,18 +49,18 @@ function Art({ kind }: { kind: PlateKind }) {
     case 'station-night':
       return (
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" className="h-full w-full">
-          <rect width="1600" height="900" fill="#1C1C1C" />
-          <rect y="640" width="1600" height="260" fill="#161616" />
-          <Tower x={260} base={640} h={430} stroke="#4a4a48" />
-          <Tower x={600} base={640} h={300} stroke="#3a3a39" />
-          <path d="M200 285 Q 420 360 560 380 M320 285 Q 470 340 640 380 M560 380 Q 760 470 930 470 M640 380 Q 800 450 960 470" stroke="#5a5a58" strokeWidth="1.2" fill="none" />
-          <rect x="930" y="470" width="8" height="170" fill="#3a3a39" />
-          <rect x="950" y="480" width="70" height="160" fill="#2c2c2b" />
+          <rect width="1600" height="900" fill="#1B2A4A" />
+          <rect y="640" width="1600" height="260" fill="#16233E" />
+          <Tower x={260} base={640} h={430} stroke="#5B6B8A" />
+          <Tower x={600} base={640} h={300} stroke="#46567A" />
+          <path d="M200 285 Q 420 360 560 380 M320 285 Q 470 340 640 380 M560 380 Q 760 470 930 470 M640 380 Q 800 450 960 470" stroke="#6E7E9C" strokeWidth="1.2" fill="none" />
+          <rect x="930" y="470" width="8" height="170" fill="#3A4A6C" />
+          <rect x="950" y="480" width="70" height="160" fill="#2D3E63" />
           <rect x="1006" y="492" width="3" height="128" fill="#E6E6E4" opacity="0.85" />
           {[1040, 1170, 1300, 1430].map((x) => (
-            <Enclosure key={x} x={x} y={530} w={118} h={110} body="#262626" seam="#1C1C1C" strip="#E6E6E4" />
+            <Enclosure key={x} x={x} y={530} w={118} h={110} body="#24355A" seam="#1B2A4A" strip="#E6E6E4" />
           ))}
-          <rect x="900" y="636" width="700" height="6" fill="#2a2a29" />
+          <rect x="900" y="636" width="700" height="6" fill="#263759" />
         </svg>
       );
     case 'station':
@@ -140,7 +140,7 @@ export function Plate({ kind, className = '', label = true }: { kind: PlateKind;
     <div className={`relative overflow-hidden ${className}`} role="img" aria-label={`Placeholder image: ${LABELS[kind]}`}>
       <Art kind={kind} />
       {label && (
-        <span aria-hidden="true" className={`label absolute bottom-4 left-4 ${dark ? 'text-ash' : 'text-ink/75'}`}>
+        <span aria-hidden="true" className={`label absolute bottom-4 left-4 ${dark ? 'text-ground/70' : 'text-ink/75'}`}>
           Placeholder image / {LABELS[kind]}
         </span>
       )}

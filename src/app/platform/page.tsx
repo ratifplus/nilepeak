@@ -31,7 +31,7 @@ export default function PlatformPage() {
           <div className="grid-12 items-center gap-y-10">
             <div className={`col-span-12 md:col-span-5 ${i % 2 ? 'md:order-2 md:col-start-8' : ''}`}>
               <p data-reveal className="label text-mute">
-                <span className="mr-4 text-ink">{m.n}</span>Function
+                <span className="mr-4 text-navy">{m.n}</span>Function
               </p>
               <h2 data-reveal className="headline mt-8 text-[18vw] md:text-[8vw] 2xl:text-[132px]">
                 {m.title}
@@ -50,7 +50,7 @@ export default function PlatformPage() {
       <section className="screen border-t border-rule">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-ink">04</span>Specification
+            <span className="mr-4 text-navy">04</span>Specification
           </p>
           <dl data-reveal className="col-span-12 border-t border-rule md:col-span-9">
             {SPECS.map((s) => (

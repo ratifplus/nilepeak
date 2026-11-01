@@ -15,7 +15,7 @@ export default function CompanyPage() {
       <section className="screen border-t border-rule">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-ink">01</span>Mission
+            <span className="mr-4 text-navy">01</span>Mission
           </p>
           <p data-reveal className="headline col-span-12 text-5xl md:col-span-9 md:text-7xl">
             We exist to make stable power a given. We develop the stations that keep grids up and bring them back when they fall.
@@ -26,15 +26,15 @@ export default function CompanyPage() {
       {/* The page's one dark band */}
       <section className="screen bg-band text-ground">
         <div className="grid-12 items-end gap-y-10">
-          <p data-reveal className="label col-span-12 text-ash md:col-span-3">
+          <p data-reveal className="label col-span-12 text-ground/70 md:col-span-3">
             <span className="mr-4 text-ground">02</span>Leadership
           </p>
           <div data-reveal className="col-span-8 md:col-span-4">
             <Plate kind="portrait" className="aspect-[4/5] w-full" />
           </div>
           <div data-reveal className="col-span-12 md:col-span-5">
-            <p className="label text-ash">Founder and Chief Executive</p>
-            <h2 className="headline mt-4 text-6xl md:text-8xl">Name Surname</h2>
+            <p className="label text-ground/70">Founder and Chief Executive</p>
+            <h2 className="headline mt-4 text-6xl text-ground md:text-8xl">Name Surname</h2>
             <p className="body mt-6 max-w-sm text-ground/70">Placeholder biography. One or two sentences on background and role.</p>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function CompanyPage() {
       <section className="border-t border-rule py-28 md:py-40">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-ink">03</span>Locations
+            <span className="mr-4 text-navy">03</span>Locations
           </p>
           <p data-reveal className="headline col-span-12 text-5xl md:col-span-9 md:text-7xl">
             Offices: placeholder

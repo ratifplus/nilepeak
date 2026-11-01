@@ -12,11 +12,11 @@ export function Header({ latest }: { latest: { title: string; slug: string } }) 
 
   return (
     <header className="sticky top-0 z-40 bg-ground">
-      <Link href={`/newsroom/${latest.slug}`} className="block border-b border-rule bg-ink text-ground">
+      <Link href={`/newsroom/${latest.slug}`} className="block border-b border-rule bg-navy text-ground">
         <div className="grid-12 h-8 items-center">
           <p className="label col-span-12 truncate">
-            <span className="text-ash">Latest</span>
-            <span className="mx-3 text-ash">/</span>
+            <span className="text-ground/70">Latest</span>
+            <span className="mx-3 text-ground/70">/</span>
             {latest.title}
           </p>
         </div>
@@ -36,7 +36,7 @@ export function Header({ latest }: { latest: { title: string; slug: string } }) 
                     <Link
                       href={item.href}
                       aria-current={active ? 'page' : undefined}
-                      className={`label border-b pb-1 transition-colors ${active ? 'border-ink' : 'border-transparent text-ink/70 hover:text-ink'}`}
+                      className={`label border-b pb-1 transition-colors ${active ? 'border-navy text-navy' : 'border-transparent text-ink/70 hover:text-navy'}`}
                     >
                       {item.label}
                     </Link>

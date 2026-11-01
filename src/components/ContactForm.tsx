@@ -34,7 +34,7 @@ export function ContactForm() {
 
   if (state === 'sent') {
     return (
-      <div role="status" className="border-t border-ink pt-10">
+      <div role="status" className="border-t border-navy pt-10">
         <p className="label text-mute">Received</p>
         <p className="headline mt-6 text-6xl md:text-8xl">Thank you.</p>
         <p className="body mt-6 max-w-md">We will reply to the email you provided.</p>
@@ -80,7 +80,7 @@ export function ContactForm() {
         <textarea name="message" required rows={5} className="field resize-y" />
       </Field>
       <div className="col-span-12">
-        <button type="submit" disabled={state === 'sending'} className="label bg-ink px-8 py-4 text-ground transition-opacity hover:opacity-80 disabled:opacity-50">
+        <button type="submit" disabled={state === 'sending'} className="label bg-navy px-8 py-4 text-ground transition-opacity hover:opacity-80 disabled:opacity-50">
           {state === 'sending' ? 'Sending' : 'Submit'}
         </button>
       </div>

@@ -16,7 +16,7 @@ export default function Home() {
         </div>
         <HumFilter target="#hero-title" />
         <div className="grid-12 relative gap-y-8 pt-20 md:pt-28">
-          <h1 id="hero-title" className="headline col-span-12 text-[12.5vw] md:col-span-10 md:text-[9.4vw] 2xl:text-[150px]">
+          <h1 id="hero-title" className="headline col-span-12 text-ground text-[12.5vw] md:col-span-10 md:text-[9.4vw] 2xl:text-[150px]">
             Stable power is national infrastructure.
           </h1>
           <p className="body col-span-12 max-w-md text-ground/80 md:col-span-5">
@@ -32,7 +32,7 @@ export default function Home() {
       <section className="screen border-t border-rule">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-ink">02</span>Platform
+            <span className="mr-4 text-navy">02</span>Platform
           </p>
           <h2 data-reveal className="headline col-span-12 text-[11vw] md:col-span-9 md:text-[5.6vw] 2xl:text-[92px]">
             A station that stores energy and holds the grid up when it falters.
@@ -58,7 +58,7 @@ export default function Home() {
       <section className="border-t border-rule py-28 md:py-40">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-ink">04</span>News
+            <span className="mr-4 text-navy">04</span>News
           </p>
           <ul className="col-span-12 border-t border-rule md:col-span-9">
             {news.map((p) => (

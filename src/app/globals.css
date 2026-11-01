@@ -3,14 +3,15 @@
 @theme {
   --color-ground: #e6e6e4;
   --color-ink: #111111;
+  --color-navy: #1b2a4a; /* the one brand color */
+  --color-title: #2b2b29; /* headlines: softer than ink */
   --color-mute: #646462;
-  --color-ash: #8e8e8c; /* labels on the dark band */
   --color-rule: #c9c9c6;
-  --color-band: #1c1c1c;
+  --color-band: #1b2a4a;
 
   --font-display: var(--font-barlow), 'Archivo Narrow', 'Arial Narrow', sans-serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-label: var(--font-barlow-text), 'Inter', sans-serif;
 }
 
 html {
@@ -34,10 +35,10 @@ body {
     @apply mx-auto grid w-full max-w-[1600px] grid-cols-12 gap-x-4 px-5 md:gap-x-6 md:px-12 lg:px-16;
   }
   .label {
-    @apply font-mono text-[11px] font-medium uppercase tracking-[0.2em];
+    @apply font-label text-[12px] font-medium uppercase tracking-[0.16em];
   }
   .headline {
-    @apply font-display font-bold uppercase leading-[0.86] tracking-[-0.01em];
+    @apply font-display font-medium uppercase leading-[0.9] tracking-[0.005em] text-title;
   }
   .body {
     @apply font-sans text-base leading-relaxed md:text-lg;
@@ -46,10 +47,10 @@ body {
     @apply flex min-h-[100svh] flex-col justify-center py-28;
   }
   .link {
-    @apply font-mono text-[11px] font-medium uppercase tracking-[0.2em] inline-flex items-center gap-3 border-b border-current pb-1 transition-opacity hover:opacity-60;
+    @apply font-label text-[12px] font-medium uppercase tracking-[0.16em] inline-flex items-center gap-3 border-b border-navy pb-1 text-navy transition-opacity hover:opacity-60;
   }
   .field {
-    @apply w-full rounded-none border-0 border-b border-rule bg-transparent py-3 text-base text-ink outline-none placeholder:text-mute focus:border-ink;
+    @apply w-full rounded-none border-0 border-b border-rule bg-transparent py-3 text-base text-ink outline-none placeholder:text-mute focus:border-navy;
   }
 }
 

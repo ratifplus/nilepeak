@@ -20,7 +20,7 @@ export function Section({
     <section className={`screen border-t border-rule ${className}`}>
       <div className="grid-12 gap-y-10">
         <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-          {n && <span className="mr-4 text-ink">{n}</span>}
+          {n && <span className="mr-4 text-navy">{n}</span>}
           {label}
         </p>
         <div className="col-span-12 md:col-span-9">
