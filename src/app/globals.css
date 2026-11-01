@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #050607;
+  --color-paper: #f2f3f4;
+  --color-mute: #8b9298;
+  --color-rule: #1e2226;
+  --color-volt: #3ad1ff;
+  --color-panel: #0a0c0e;
+
+  --font-display: var(--font-barlow), 'Archivo Narrow', 'Arial Narrow', sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-volt);
+  color: var(--color-ink);
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1440px] px-5 md:px-10;
+  }
+  .label {
+    @apply font-mono text-[11px] uppercase tracking-[0.22em];
+  }
+  .display {
+    @apply font-display font-semibold uppercase leading-[0.9] tracking-[0.005em];
+  }
+  .rule-t {
+    @apply border-t border-rule;
+  }
+  .rule-b {
+    @apply border-b border-rule;
+  }
+  .btn {
+    @apply inline-flex items-center gap-3 border border-paper/30 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] transition-colors hover:border-volt hover:text-volt;
+  }
+  .link-arrow {
+    @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-paper transition-colors hover:text-volt;
+  }
+  .field {
+    @apply w-full border-b border-rule bg-transparent py-3 font-sans text-base text-paper outline-none transition-colors placeholder:text-mute/60 focus:border-volt;
+  }
+}
+
+/* The HTML headline stays in the DOM for SEO and screen readers. Once the
+   WebGL copy is drawn on top, the HTML glyphs are hidden visually. */
+.energized-ready .energized-source {
+  color: transparent;
+}
+
+.redacted-bar {
+  display: inline-block;
+  height: 0.85em;
+  vertical-align: -0.08em;
+  background: var(--color-paper);
+}
+
+/* Power dip page transition */
+@keyframes power-dip {
+  0% { opacity: var(--dip-depth, 0.82); }
+  28% { opacity: 0.35; }
+  40% { opacity: var(--dip-depth, 0.82); }
+  55% { opacity: 0.55; }
+  100% { opacity: 0; }
+}
+@keyframes page-up {
+  from { transform: translateY(6px); }
+  to { transform: none; }
+}
+.power-dip {
+  animation: power-dip var(--dip-ms, 280ms) linear forwards;
+}
+.page-up {
+  animation: page-up 420ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: 120ms;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 38s linear infinite;
+}
+
+@keyframes blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.25; }
+}
+.blink {
+  animation: blink 1.6s steps(1) infinite;
+}
+
+@keyframes scan {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+  .ticker-track {
+    animation: none;
+  }
+  .power-dip {
+    animation: none;
+    opacity: 0;
+  }
+  .page-up {
+    animation: page-up 200ms ease backwards;
+  }
+}
