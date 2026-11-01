@@ -1,39 +1,41 @@
 import type { Metadata, Viewport } from 'next';
 import { Barlow_Condensed, Inter, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
-import { Providers } from '@/components/Providers';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Reveal } from '@/components/Reveal';
 import { getPostMetas } from '@/lib/news';
 import { site } from '@/lib/site';
 
-const barlow = Barlow_Condensed({ subsets: ['latin'], weight: ['600', '700'], variable: '--font-barlow', display: 'swap' });
+const barlow = Barlow_Condensed({ subsets: ['latin'], weight: '700', variable: '--font-barlow', display: 'swap' });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-plex-mono', display: 'swap' });
+const plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: '500', variable: '--font-plex-mono', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: 'Nile Peak | Kampala, without load shedding', template: '%s | Nile Peak' },
-  description: site.tagline,
-  openGraph: { siteName: 'Nile Peak', type: 'website', locale: 'en_UG' },
+  title: { default: 'Nile Peak | Stable power is national infrastructure', template: '%s | Nile Peak' },
+  description: site.description,
+  openGraph: { siteName: 'Nile Peak', type: 'website' },
   twitter: { card: 'summary_large_image' },
 };
 
-export const viewport: Viewport = { themeColor: '#050607', colorScheme: 'dark' };
+export const viewport: Viewport = { themeColor: '#E6E6E4' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const latest = getPostMetas()[0];
   return (
-    <html lang="en" className={`${barlow.variable} ${inter.variable} ${plexMono.variable}`}>
-      <body className="min-h-screen bg-ink text-paper">
-        <a href="#main" className="label sr-only z-[100] bg-paper px-4 py-2 text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
+    <html lang="en" className={`${barlow.variable} ${inter.variable} ${plexMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body className="bg-ground text-ink">
+        <a href="#main" className="label sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-ground">
           Skip to content
         </a>
-        <Providers>
-          <Header headline={{ title: latest.title, slug: latest.slug, category: latest.category }} />
-          <main id="main">{children}</main>
-          <Footer />
-        </Providers>
+        <Header latest={{ title: latest.title, slug: latest.slug }} />
+        <main id="main">{children}</main>
+        <Footer />
+        <Reveal />
       </body>
     </html>
   );

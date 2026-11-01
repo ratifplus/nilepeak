@@ -1,9 +1,9 @@
 import { ogContentType, ogSize, renderOg } from '@/lib/og';
 
-export const alt = 'Nile Peak: Contact Nile Peak';
+export const alt = 'Nile Peak: Request a briefing';
 export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function Image() {
-  return renderOg('Contact Nile Peak', 'CONTACT');
+  return renderOg('Request a briefing', 'CONTACT');
 }

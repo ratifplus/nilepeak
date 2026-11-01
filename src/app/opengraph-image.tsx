@@ -1,9 +1,9 @@
 import { ogContentType, ogSize, renderOg } from '@/lib/og';
 
-export const alt = 'Nile Peak: Kampala, without load shedding';
+export const alt = 'Nile Peak: Stable power is national infrastructure';
 export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function Image() {
-  return renderOg('Kampala, without load shedding', 'PEAK STATION');
+  return renderOg('Stable power is national infrastructure', 'NILE PEAK');
 }

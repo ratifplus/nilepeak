@@ -1,18 +1,17 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
+import type { PlateKind } from '@/components/Plate';
 
-export type Category = 'NEWS' | 'BLOG' | 'PRESS';
-export type PostVisualKind = 'station' | 'wave' | 'grid' | 'core' | 'city';
+export type Category = 'NEWS' | 'PRESS';
 
 export interface PostMeta {
   slug: string;
   title: string;
   date: string;
   category: Category;
-  excerpt: string;
-  featured: boolean;
-  visual: PostVisualKind;
+  summary: string;
+  image: PlateKind;
 }
 
 export interface Post extends PostMeta {
@@ -22,16 +21,14 @@ export interface Post extends PostMeta {
 const NEWS_DIR = path.join(process.cwd(), 'content', 'news');
 
 function readPost(file: string): Post {
-  const raw = fs.readFileSync(path.join(NEWS_DIR, file), 'utf8');
-  const { data, content } = matter(raw);
+  const { data, content } = matter(fs.readFileSync(path.join(NEWS_DIR, file), 'utf8'));
   return {
     slug: file.replace(/\.mdx$/, ''),
     title: String(data.title),
     date: String(data.date),
     category: (data.category ?? 'NEWS') as Category,
-    excerpt: String(data.excerpt ?? ''),
-    featured: Boolean(data.featured),
-    visual: (data.visual ?? 'station') as PostVisualKind,
+    summary: String(data.summary ?? ''),
+    image: (data.image ?? 'station') as PlateKind,
     body: content,
   };
 }
@@ -53,8 +50,7 @@ export function getPost(slug: string): Post | undefined {
 }
 
 export function formatDate(iso: string) {
-  const d = new Date(iso + 'T00:00:00Z');
-  return d
+  return new Date(iso + 'T00:00:00Z')
     .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' })
     .toUpperCase();
 }

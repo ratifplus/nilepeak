@@ -1,40 +1,29 @@
 # Nile Peak
 
-Website for [nilepeak.com](https://nilepeak.com). Grid-forming battery power stations that keep Kampala's electricity on during load shedding.
+Corporate site for [nilepeak.com](https://nilepeak.com). Nile Peak develops grid-forming stations that hold power grids steady and restore them after failure.
 
 ## Stack
 
-Next.js (App Router) · TypeScript · Tailwind CSS v4 · React Three Fiber, drei, @react-three/postprocessing · GSAP ScrollTrigger · Lenis · MDX (next-mdx-remote)
-
-## Run
+Next.js (App Router), TypeScript, Tailwind CSS v4, MDX (next-mdx-remote). No 3D or animation libraries.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npm run dev
 npm run build && npm run start
 ```
 
-## Where things live
+## Structure
 
 | Path | What |
 | --- | --- |
-| `src/config/effects.ts` | Every effect parameter: jitter, falloff, aberration, pulse speed, bloom, colors, grid moment phases, power dip, sound |
-| `src/app/` | Routes: `/`, `/station`, `/core`, `/autonomy`, `/company`, `/newsroom`, `/newsroom/[slug]`, `/careers`, `/contact`, `/privacy`, `/supplier-code-of-conduct` |
-| `content/news/*.mdx` | Newsroom posts. Frontmatter: `title`, `date`, `category` (NEWS, BLOG, PRESS), `excerpt`, `featured`, `visual` |
-| `content/careers/roles.json` | Open roles |
-| `src/components/three/` | Hero scene: station, hills and city lights, transmission line pulses, energized type shader |
-| `src/components/GridMoment.tsx` | Home section 03, the pinned scroll sequence |
-| `src/components/Forms.tsx` | Contact and application forms. `submitPlaceholder` is the stub to replace with a real endpoint |
+| `src/app/` | `/`, `/platform`, `/technology`, `/company`, `/newsroom`, `/newsroom/[slug]`, `/contact`, `/privacy`, `/supplier-code-of-conduct` |
+| `content/news/*.mdx` | Posts. Frontmatter: `title`, `date`, `category` (NEWS or PRESS), `summary`, `image` |
+| `src/components/Plate.tsx` | Monochrome placeholder imagery, each labelled as a placeholder. Replace with real photography |
+| `src/components/HumFilter.tsx` | Home hero shimmer: an SVG turbulence and displacement filter, 1 to 2 px, off under reduced motion |
+| `src/components/Waveform.tsx` | Technology page line that settles into a sine wave on entry |
+| `src/components/Reveal.tsx` | 12 px, 400 ms fade up as elements enter |
+| `src/components/ContactForm.tsx` | `submit` is the placeholder handler to replace with a real endpoint |
 
-## Signature effects
+## Design rules
 
-- **Energized type** (home, station, core heroes). The real `<h1>` is rendered in HTML. After first paint the WebGL scene mounts behind a dark poster, draws the headline to a texture at the exact DOM position, and runs it through `EnergizedText`'s fragment shader (100 Hz row jitter, haze displacement, chromatic aberration, charging pulses). Once drawn, the HTML glyphs go transparent, but stay in the DOM for SEO and screen readers.
-- **The grid moment** (home 03). GSAP ScrollTrigger pins the section and scrubs a 0 to 1 progress value; a canvas draws the city and the 50 Hz wave, and per-letter transforms handle the sag, flicker and snap back.
-- **Power dip** between pages, in `src/app/template.tsx`.
-- **Station hum** (off by default). The HEAR THE STATION toggle runs a Web Audio 100 Hz sine with 200 Hz and 300 Hz harmonics; it cuts out when the grid fails in the grid moment and returns when the Core engages.
-
-`prefers-reduced-motion` gets static poster heroes, an unpinned final-state grid moment and simple fades. Small screens get lower effect intensity and pixel ratio.
-
-## Disclosure rule
-
-Stealth launch: no site locations, capacities, grid connection details, supplier names or logos. Use `<Redacted label="RESPONSE" unit="MS" />` wherever a spec would appear.
+Palette `#E6E6E4`, `#111111`, `#8E8E8C`, `#C9C9C6`, plus one `#1C1C1C` band per page. Barlow Condensed 700 for headlines, IBM Plex Mono for labels, Inter for body. No city or country names in copy, no em dashes.
