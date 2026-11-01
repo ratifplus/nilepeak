@@ -3,7 +3,8 @@
 @theme {
   --color-ground: #e6e6e4;
   --color-ink: #111111;
-  --color-mute: #8e8e8c;
+  --color-mute: #646462;
+  --color-ash: #8e8e8c; /* labels on the dark band */
   --color-rule: #c9c9c6;
   --color-band: #1c1c1c;
 

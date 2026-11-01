@@ -15,8 +15,8 @@ export function Header({ latest }: { latest: { title: string; slug: string } }) 
       <Link href={`/newsroom/${latest.slug}`} className="block border-b border-rule bg-ink text-ground">
         <div className="grid-12 h-8 items-center">
           <p className="label col-span-12 truncate">
-            <span className="text-mute">Latest</span>
-            <span className="mx-3 text-mute">/</span>
+            <span className="text-ash">Latest</span>
+            <span className="mx-3 text-ash">/</span>
             {latest.title}
           </p>
         </div>

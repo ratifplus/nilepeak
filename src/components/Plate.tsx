@@ -137,13 +137,13 @@ function Art({ kind }: { kind: PlateKind }) {
 export function Plate({ kind, className = '', label = true }: { kind: PlateKind; className?: string; label?: boolean }) {
   const dark = kind === 'station-night';
   return (
-    <figure className={`relative overflow-hidden ${className}`} role="img" aria-label={`Placeholder image: ${LABELS[kind]}`}>
+    <div className={`relative overflow-hidden ${className}`} role="img" aria-label={`Placeholder image: ${LABELS[kind]}`}>
       <Art kind={kind} />
       {label && (
-        <figcaption className={`label absolute bottom-4 left-4 ${dark ? 'text-mute' : 'text-ink/60'}`}>
+        <span aria-hidden="true" className={`label absolute bottom-4 left-4 ${dark ? 'text-ash' : 'text-ink/75'}`}>
           Placeholder image / {LABELS[kind]}
-        </figcaption>
+        </span>
       )}
-    </figure>
+    </div>
   );
 }

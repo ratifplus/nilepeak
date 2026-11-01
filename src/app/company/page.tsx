@@ -26,14 +26,14 @@ export default function CompanyPage() {
       {/* The page's one dark band */}
       <section className="screen bg-band text-ground">
         <div className="grid-12 items-end gap-y-10">
-          <p data-reveal className="label col-span-12 text-mute md:col-span-3">
+          <p data-reveal className="label col-span-12 text-ash md:col-span-3">
             <span className="mr-4 text-ground">02</span>Leadership
           </p>
           <div data-reveal className="col-span-8 md:col-span-4">
             <Plate kind="portrait" className="aspect-[4/5] w-full" />
           </div>
           <div data-reveal className="col-span-12 md:col-span-5">
-            <p className="label text-mute">Founder and Chief Executive</p>
+            <p className="label text-ash">Founder and Chief Executive</p>
             <h2 className="headline mt-4 text-6xl md:text-8xl">Name Surname</h2>
             <p className="body mt-6 max-w-sm text-ground/70">Placeholder biography. One or two sentences on background and role.</p>
           </div>
