@@ -13,7 +13,7 @@ const legal = [
 
 export function Footer() {
   return (
-    <footer className="bg-step">
+    <footer className="bg-card">
       <div className="grid-12 gap-y-10 pb-10 pt-16">
         <div className="col-span-12 md:col-span-6">
           <Link href="/" className="text-2xl font-bold uppercase tracking-[0.06em] text-ink">
@@ -52,6 +52,13 @@ export function Footer() {
           ))}
         </p>
         <p className="label col-span-12 text-mute md:col-span-5 md:text-right">© 2026 Nile Peak. All rights reserved.</p>
+      </div>
+      <div className="grid-12 pb-6">
+        <svg viewBox="0 0 1000 132" aria-hidden="true" className="col-span-12 w-full fill-step">
+          <text x="0" y="126" textLength="1000" lengthAdjust="spacingAndGlyphs" fontSize="174" fontWeight="700" fontFamily="var(--font-sans)">
+            NILE PEAK
+          </text>
+        </svg>
       </div>
     </footer>
   );

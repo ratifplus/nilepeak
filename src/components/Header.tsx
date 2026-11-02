@@ -12,12 +12,12 @@ export function Header({ latest }: { latest: { title: string; slug: string } }) 
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className="sticky top-0 z-40">
+    <>
       {strip && (
-        <div className="bg-white">
+        <div className="sticky top-0 z-40 bg-white">
           <div className="grid-12 h-8 items-center">
             <p className="label col-span-3 flex items-center gap-2 text-ink md:col-span-2">
-              <span className="h-2 w-2 rounded-full bg-navy" aria-hidden="true" />
+              <span className="pulse h-2 w-2 rounded-full bg-navy" aria-hidden="true" />
               News
             </p>
             <Link href={`/newsroom/${latest.slug}`} className="label col-span-8 truncate text-ink hover:text-navy md:col-span-9 md:text-center">
@@ -32,7 +32,7 @@ export function Header({ latest }: { latest: { title: string; slug: string } }) 
         </div>
       )}
 
-      <div className="absolute inset-x-0">
+      <header className="absolute inset-x-0 z-40">
         <div className="grid-12 h-16 items-center">
           <Link href="/" className="col-span-6 text-lg font-bold uppercase tracking-[0.06em] text-ink">
             Nile Peak
@@ -69,7 +69,7 @@ export function Header({ latest }: { latest: { title: string; slug: string } }) 
             </ul>
           </nav>
         )}
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

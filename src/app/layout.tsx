@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
 };
 
-export const viewport: Viewport = { themeColor: '#EBEBEA' };
+export const viewport: Viewport = { themeColor: '#ECECEC' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const latest = getPostMetas()[0];

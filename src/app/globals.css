@@ -1,14 +1,15 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-ground: #ebebea;
-  --color-step: #dadad8; /* the deeper grey ground */
-  --color-ink: #111111;
+  --color-ground: #ececec; /* the page */
+  --color-step: #d9d9d9; /* one deep band per page, ghost type */
+  --color-card: #f8f8f8; /* cards, buttons, footer */
+  --color-ink: #000000;
   --color-navy: #1b2a4a; /* the one brand color */
-  --color-title: #464444; /* headlines: mid charcoal */
-  --color-mute: #5a5a58;
-  --color-rule: #c9c9c6;
-  
+  --color-title: #454343; /* headlines and body */
+  --color-mute: #5f5f5f; /* secondary text: 4.5:1 on every ground above */
+  --color-rule: #aeaeae;
+
   --font-sans: var(--font-arimo), Arial, Helvetica, sans-serif;
 }
 
@@ -51,7 +52,7 @@ body {
     @apply py-16 md:py-24;
   }
   .link {
-    @apply inline-block border border-rule bg-white px-6 py-3 text-[11px] uppercase tracking-[0.06em] text-ink transition-colors hover:border-navy hover:text-navy;
+    @apply inline-block border border-rule bg-card px-6 py-3 text-[11px] uppercase tracking-[0.06em] text-ink transition-colors hover:border-navy hover:bg-navy hover:text-white;
   }
   .field {
     @apply w-full rounded-none border-0 border-b border-rule bg-transparent py-3 text-base text-ink outline-none placeholder:text-mute focus:border-navy;
@@ -68,6 +69,31 @@ body {
   .js [data-reveal].is-in {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* A navy ring that keeps leaving a marker. */
+@media (prefers-reduced-motion: no-preference) {
+  .pulse {
+    position: relative;
+  }
+  .pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--color-navy);
+    border-radius: inherit;
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(2.6);
+    }
   }
 }
 

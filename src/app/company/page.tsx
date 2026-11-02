@@ -23,8 +23,7 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* The page's one dark band */}
-      <section className="screen bg-step">
+      <section className="screen bg-white">
         <div className="grid-12 items-end gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
             Leadership

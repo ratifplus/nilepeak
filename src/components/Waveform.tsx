@@ -57,7 +57,7 @@ export function Waveform() {
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label="A waveform that wavers, then settles into a clean sine wave">
-      <line x1="0" y1={H / 2} x2={W} y2={H / 2} stroke="#C9C9C6" strokeWidth="1" />
+      <line x1="0" y1={H / 2} x2={W} y2={H / 2} stroke="#AEAEAE" strokeWidth="1" />
       <path ref={ref} d={path(1, 0)} stroke="#1B2A4A" strokeWidth="1.5" fill="none" vectorEffect="non-scaling-stroke" />
     </svg>
   );

@@ -87,68 +87,68 @@ function Art({ kind }: { kind: PlateKind }) {
     case 'enclosures':
       return (
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" className="h-full w-full">
-          <rect width="1600" height="900" fill="#D6D6D3" />
-          <rect y="700" width="1600" height="200" fill="#C9C9C6" />
-          {kind === 'station' && <Tower x={220} base={700} h={420} stroke="#8E8E8C" />}
+          <rect width="1600" height="900" fill="#D9D9D9" />
+          <rect y="700" width="1600" height="200" fill="#CCCCCC" />
+          {kind === 'station' && <Tower x={220} base={700} h={420} stroke="#8E8E8E" />}
           {[0, 1, 2, 3, 4].map((i) => (
-            <Enclosure key={i} x={(kind === 'station' ? 420 : 140) + i * 230} y={500} w={210} h={200} body="#9a9a97" seam="#7d7d7a" />
+            <Enclosure key={i} x={(kind === 'station' ? 420 : 140) + i * 230} y={500} w={210} h={200} body="#9a9a9a" seam="#7d7d7d" />
           ))}
-          <rect x="0" y="696" width="1600" height="8" fill="#8E8E8C" />
+          <rect x="0" y="696" width="1600" height="8" fill="#8E8E8E" />
         </svg>
       );
     case 'cabinet':
       return (
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
-          <rect width="1600" height="900" fill="#D6D6D3" />
+          <rect width="1600" height="900" fill="#D9D9D9" />
           {[0, 1, 2, 3].map((i) => (
             <g key={i} transform={`translate(${380 + i * 220} 160)`}>
-              <rect width="200" height="600" fill="#a3a3a0" />
-              <rect x="20" y="30" width="110" height="50" fill="#7d7d7a" />
+              <rect width="200" height="600" fill="#a3a3a3" />
+              <rect x="20" y="30" width="110" height="50" fill="#7d7d7d" />
               {Array.from({ length: 16 }).map((_, k) => (
-                <rect key={k} x="20" y={140 + k * 22} width="160" height="8" fill="#8E8E8C" />
+                <rect key={k} x="20" y={140 + k * 22} width="160" height="8" fill="#8E8E8E" />
               ))}
-              <rect x="176" y="120" width="4" height="420" fill="#7d7d7a" />
+              <rect x="176" y="120" width="4" height="420" fill="#7d7d7d" />
             </g>
           ))}
-          <rect y="760" width="1600" height="140" fill="#C9C9C6" />
+          <rect y="760" width="1600" height="140" fill="#CCCCCC" />
         </svg>
       );
     case 'transformer':
       return (
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
-          <rect width="1600" height="900" fill="#D6D6D3" />
-          <rect x="560" y="360" width="480" height="380" fill="#9a9a97" />
+          <rect width="1600" height="900" fill="#D9D9D9" />
+          <rect x="560" y="360" width="480" height="380" fill="#9a9a9a" />
           {Array.from({ length: 12 }).map((_, k) => (
-            <rect key={k} x={1040} y={380 + k * 28} width="80" height="12" fill="#8E8E8C" />
+            <rect key={k} x={1040} y={380 + k * 28} width="80" height="12" fill="#8E8E8E" />
           ))}
           {[640, 800, 960].map((x) => (
             <g key={x}>
-              <rect x={x - 12} y="220" width="24" height="140" fill="#8E8E8C" />
+              <rect x={x - 12} y="220" width="24" height="140" fill="#8E8E8E" />
               {[0, 1, 2, 3, 4].map((k) => (
-                <rect key={k} x={x - 22} y={230 + k * 24} width="44" height="10" fill="#7d7d7a" />
+                <rect key={k} x={x - 22} y={230 + k * 24} width="44" height="10" fill="#7d7d7d" />
               ))}
             </g>
           ))}
-          <rect y="740" width="1600" height="160" fill="#C9C9C6" />
+          <rect y="740" width="1600" height="160" fill="#CCCCCC" />
         </svg>
       );
     case 'line':
       return (
         <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" className="h-full w-full">
-          <rect width="1600" height="900" fill="#D6D6D3" />
-          <rect y="740" width="1600" height="160" fill="#C9C9C6" />
-          <Tower x={300} base={740} h={560} stroke="#5f5f5d" />
-          <Tower x={900} base={740} h={420} stroke="#7d7d7a" />
-          <Tower x={1350} base={740} h={320} stroke="#8E8E8C" />
-          <path d="M150 280 Q 600 420 830 400 Q 1120 470 1300 480 M450 280 Q 760 400 970 400 Q 1240 470 1400 480" stroke="#5f5f5d" strokeWidth="1.4" fill="none" />
+          <rect width="1600" height="900" fill="#D9D9D9" />
+          <rect y="740" width="1600" height="160" fill="#CCCCCC" />
+          <Tower x={300} base={740} h={560} stroke="#5f5f5f" />
+          <Tower x={900} base={740} h={420} stroke="#7d7d7d" />
+          <Tower x={1350} base={740} h={320} stroke="#8E8E8E" />
+          <path d="M150 280 Q 600 420 830 400 Q 1120 470 1300 480 M450 280 Q 760 400 970 400 Q 1240 470 1400 480" stroke="#5f5f5f" strokeWidth="1.4" fill="none" />
         </svg>
       );
     case 'portrait':
       return (
         <svg viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
-          <rect width="800" height="1000" fill="#D6D6D3" />
-          <circle cx="400" cy="400" r="150" fill="#a3a3a0" />
-          <path d="M140 1000 C 160 700 640 700 660 1000Z" fill="#a3a3a0" />
+          <rect width="800" height="1000" fill="#D9D9D9" />
+          <circle cx="400" cy="400" r="150" fill="#a3a3a3" />
+          <path d="M140 1000 C 160 700 640 700 660 1000Z" fill="#a3a3a3" />
         </svg>
       );
   }

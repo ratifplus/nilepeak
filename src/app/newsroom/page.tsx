@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { PageTitle } from '@/components/ui';
-import { formatDate, getPostMetas } from '@/lib/news';
+import { NewsCard, PageTitle } from '@/components/ui';
+import { getPostMetas } from '@/lib/news';
 
 export const metadata: Metadata = {
   title: 'Newsroom',
@@ -13,19 +12,11 @@ export default function NewsroomPage() {
   return (
     <>
       <PageTitle label="Newsroom" title="Newsroom" />
-      <section className="pb-28 md:pb-40">
+      <section className="bg-white py-16 md:py-24">
         <div className="grid-12">
-          <ul className="col-span-12 border-t border-rule">
+          <ul className="col-span-12 grid gap-4 md:grid-cols-3 md:gap-6">
             {posts.map((p) => (
-              <li key={p.slug} data-reveal className="border-b border-rule">
-                <Link href={`/newsroom/${p.slug}`} className="grid grid-cols-12 gap-x-6 gap-y-2 py-10 transition-opacity hover:opacity-60">
-                  <time dateTime={p.date} className="label col-span-6 text-mute md:col-span-2 md:pt-2">
-                    {formatDate(p.date)}
-                  </time>
-                  <span className="label col-span-6 text-mute md:col-span-1 md:pt-2">{p.category}</span>
-                  <span className="headline t-l col-span-12 md:col-span-9">{p.title}</span>
-                </Link>
-              </li>
+              <NewsCard key={p.slug} post={p} />
             ))}
           </ul>
         </div>

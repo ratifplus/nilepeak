@@ -1,18 +1,24 @@
 import Link from 'next/link';
 import { HeroField } from '@/components/HeroField';
 import { Plate } from '@/components/Plate';
-import { Marker, Section } from '@/components/ui';
-import { formatDate, getPostMetas } from '@/lib/news';
+import { Hotspot, Marker, NewsCard, Section } from '@/components/ui';
+import { getPostMetas } from '@/lib/news';
 
 /** Hero object: swap src for the transparent PNG when it arrives and set placeholder to false. */
 const HERO_OBJECT = { src: '/images/hero-object.svg', width: 1000, height: 900, placeholder: true };
+
+const FUNCTIONS = [
+  { title: 'Stores', text: 'Energy held in reserve, ready the moment the grid needs it.', x: 38, y: 62 },
+  { title: 'Stabilizes', text: 'Holds frequency and voltage steady when supply and demand fall out of balance.', x: 49, y: 26, align: 'right' as const },
+  { title: 'Restores', text: 'Restarts the grid after a blackout, section by section.', x: 60, y: 62, align: 'right' as const },
+];
 
 export default function Home() {
   const news = getPostMetas().slice(0, 3);
 
   return (
     <>
-      <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-step">
+      <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-ground">
         <HeroField sourceId="hero-title" emitterId="hero-object" />
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -39,9 +45,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-step">
-        <Plate kind="station" className="aspect-[16/10] w-full md:aspect-[21/9]" />
-      </div>
+      <Plate kind="station" className="aspect-[16/10] w-full md:aspect-[21/9]" />
 
       <Section n="01" label="Problem" title="Grids are failing faster than they can be rebuilt." className="bg-step">
         <p>Every outage stops industry, public services and investment.</p>
@@ -54,6 +58,31 @@ export default function Home() {
         link={{ href: '/platform', label: 'Platform' }}
         className="bg-ground"
       />
+
+      <div className="grid-12 bg-ground pb-8">
+        <div className="relative col-span-12 aspect-[4/3] md:aspect-[21/9]">
+          <p
+            aria-hidden="true"
+            className="absolute inset-0 flex select-none items-center justify-center overflow-hidden text-center text-[clamp(5rem,17vw,18rem)] leading-[0.85] tracking-[-0.03em] text-step"
+          >
+            Peak
+            <br />
+            Station
+          </p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={HERO_OBJECT.src}
+            width={HERO_OBJECT.width}
+            height={HERO_OBJECT.height}
+            alt={HERO_OBJECT.placeholder ? 'Placeholder: transformer' : 'A grid-forming station transformer'}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full select-none object-contain"
+          />
+          {FUNCTIONS.map((f) => (
+            <Hotspot key={f.title} {...f} />
+          ))}
+        </div>
+      </div>
 
       <Section
         n="03"
@@ -68,16 +97,9 @@ export default function Home() {
           <div className="col-span-12">
             <Marker n="04" label="News" />
           </div>
-          <ul className="col-span-12 grid gap-8 md:grid-cols-3">
+          <ul className="col-span-12 grid gap-4 md:grid-cols-3 md:gap-6">
             {news.map((p) => (
-              <li key={p.slug} data-reveal>
-                <time dateTime={p.date} className="text-[11px] text-mute">
-                  {formatDate(p.date)}
-                </time>
-                <Link href={`/newsroom/${p.slug}`} className="mt-3 block text-xl font-bold leading-tight tracking-[-0.01em] text-title hover:text-navy">
-                  {p.title}
-                </Link>
-              </li>
+              <NewsCard key={p.slug} post={p} />
             ))}
           </ul>
           <div data-reveal className="col-span-12 mt-4">
