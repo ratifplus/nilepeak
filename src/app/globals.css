@@ -38,7 +38,7 @@ body {
     @apply font-label text-[12px] font-medium uppercase tracking-[0.16em];
   }
   .headline {
-    @apply font-display font-medium uppercase leading-[0.9] tracking-[0.005em] text-title;
+    @apply font-display font-medium leading-[0.92] tracking-[-0.01em] text-title;
   }
   .body {
     @apply font-sans text-base leading-relaxed md:text-lg;
@@ -65,8 +65,9 @@ body {
     opacity: 1;
     transform: none;
   }
-  /* Hero shimmer: the station's hum bending the air. */
-  .hum-on {
-    filter: url(#hum);
-  }
+}
+
+/* Once the hero field has drawn the headline in WebGL, hide the HTML glyphs (they stay for SEO and screen readers). */
+.field-ready .field-source {
+  color: transparent;
 }

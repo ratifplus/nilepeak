@@ -18,10 +18,10 @@ export default function TechnologyPage() {
         </p>
       </PageTitle>
 
-      <section className="screen border-t border-rule">
+      <section className="screen">
         <div className="grid-12 gap-y-10">
           <p className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-navy">01</span>Waveform
+            Waveform
           </p>
           <div className="col-span-12 md:col-span-9">
             <Waveform />
@@ -33,7 +33,7 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      <section className="screen border-t border-rule">
+      <section className="screen">
         <div className="grid-12 gap-y-10">
           <h2 className="headline col-span-12 text-[15vw] md:text-[9vw] 2xl:text-[150px]">The Peak Station</h2>
           <div className="col-span-12">

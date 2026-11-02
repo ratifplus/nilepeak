@@ -1,15 +1,13 @@
 import Link from 'next/link';
 
-/** One idea per screen: a mono section number over a headline and up to two sentences. */
+/** One idea per screen: a small label over a headline and up to two sentences. No dividers. */
 export function Section({
-  n,
   label,
   title,
   children,
   link,
   className = '',
 }: {
-  n?: string;
   label?: string;
   title: React.ReactNode;
   children?: React.ReactNode;
@@ -17,14 +15,15 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section className={`screen border-t border-rule ${className}`}>
-      <div className="grid-12 gap-y-10">
-        <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-          {n && <span className="mr-4 text-navy">{n}</span>}
-          {label}
-        </p>
-        <div className="col-span-12 md:col-span-9">
-          <h2 data-reveal className="headline text-[13vw] md:text-[7.5vw] 2xl:text-[124px]">
+    <section className={`screen ${className}`}>
+      <div className="grid-12">
+        <div className="col-span-12 md:col-span-9 md:col-start-4">
+          {label && (
+            <p data-reveal className="label text-mute">
+              {label}
+            </p>
+          )}
+          <h2 data-reveal className="headline mt-6 text-[13vw] md:text-[7vw] 2xl:text-[116px]">
             {title}
           </h2>
           {children && (
@@ -47,7 +46,7 @@ export function Section({
 
 export function PageTitle({ label, title, children }: { label: string; title: React.ReactNode; children?: React.ReactNode }) {
   return (
-    <section className="flex min-h-[78svh] flex-col justify-end pb-16 pt-32 md:pb-24">
+    <section className="flex min-h-[70svh] flex-col justify-end pb-16 pt-32 md:pb-24">
       <div className="grid-12 gap-y-8">
         <p className="label col-span-12 text-mute">{label}</p>
         <h1 className="headline col-span-12 text-[16vw] md:col-span-11 md:text-[10vw] 2xl:text-[168px]">{title}</h1>

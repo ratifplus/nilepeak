@@ -12,10 +12,10 @@ export default function CompanyPage() {
     <>
       <PageTitle label="Company" title="Built for the grids that need it most" />
 
-      <section className="screen border-t border-rule">
+      <section className="screen">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-navy">01</span>Mission
+            Mission
           </p>
           <p data-reveal className="headline col-span-12 text-5xl md:col-span-9 md:text-7xl">
             We exist to make stable power a given. We develop the stations that keep grids up and bring them back when they fall.
@@ -27,7 +27,7 @@ export default function CompanyPage() {
       <section className="screen bg-band text-ground">
         <div className="grid-12 items-end gap-y-10">
           <p data-reveal className="label col-span-12 text-ground/70 md:col-span-3">
-            <span className="mr-4 text-ground">02</span>Leadership
+            Leadership
           </p>
           <div data-reveal className="col-span-8 md:col-span-4">
             <Plate kind="portrait" className="aspect-[4/5] w-full" sizes="(min-width: 768px) 33vw, 66vw" />
@@ -40,10 +40,10 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <section className="border-t border-rule py-28 md:py-40">
+      <section className="py-28 md:py-40">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-navy">03</span>Locations
+            Locations
           </p>
           <p data-reveal className="headline col-span-12 text-5xl md:col-span-9 md:text-7xl">
             Offices: placeholder

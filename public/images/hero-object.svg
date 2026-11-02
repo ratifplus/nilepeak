@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900">
+  <!-- Placeholder for the hero object: replace with a transparent PNG. Front-on transformer, greys only, no background. -->
+  <g fill="none">
+    <ellipse cx="500" cy="860" rx="380" ry="22" fill="#000" opacity="0.08"/>
+    <rect x="170" y="420" width="660" height="420" fill="#9b9b98"/>
+    <rect x="170" y="420" width="660" height="18" fill="#b3b3b0"/>
+    <g fill="#8a8a87">
+      <rect x="200" y="470" width="14" height="340"/><rect x="232" y="470" width="14" height="340"/><rect x="264" y="470" width="14" height="340"/><rect x="296" y="470" width="14" height="340"/><rect x="328" y="470" width="14" height="340"/>
+      <rect x="658" y="470" width="14" height="340"/><rect x="690" y="470" width="14" height="340"/><rect x="722" y="470" width="14" height="340"/><rect x="754" y="470" width="14" height="340"/><rect x="786" y="470" width="14" height="340"/>
+    </g>
+    <rect x="380" y="470" width="240" height="340" fill="#a6a6a3"/>
+    <rect x="400" y="490" width="90" height="40" fill="#7f7f7c"/>
+    <g>
+      <rect x="315" y="360" width="70" height="60" fill="#8a8a87"/>
+      <rect x="465" y="360" width="70" height="60" fill="#8a8a87"/>
+      <rect x="615" y="360" width="70" height="60" fill="#8a8a87"/>
+    </g>
+    <g fill="#5f5f5c">
+      <rect x="333" y="90" width="34" height="270"/>
+      <rect x="483" y="60" width="34" height="300"/>
+      <rect x="633" y="90" width="34" height="270"/>
+    </g>
+    <g fill="#4c4c4a">
+      <rect x="318" y="110" width="64" height="12"/><rect x="318" y="140" width="64" height="12"/><rect x="318" y="170" width="64" height="12"/><rect x="318" y="200" width="64" height="12"/><rect x="318" y="230" width="64" height="12"/><rect x="318" y="260" width="64" height="12"/><rect x="318" y="290" width="64" height="12"/><rect x="318" y="320" width="64" height="12"/>
+      <rect x="468" y="80" width="64" height="12"/><rect x="468" y="110" width="64" height="12"/><rect x="468" y="140" width="64" height="12"/><rect x="468" y="170" width="64" height="12"/><rect x="468" y="200" width="64" height="12"/><rect x="468" y="230" width="64" height="12"/><rect x="468" y="260" width="64" height="12"/><rect x="468" y="290" width="64" height="12"/><rect x="468" y="320" width="64" height="12"/>
+      <rect x="618" y="110" width="64" height="12"/><rect x="618" y="140" width="64" height="12"/><rect x="618" y="170" width="64" height="12"/><rect x="618" y="200" width="64" height="12"/><rect x="618" y="230" width="64" height="12"/><rect x="618" y="260" width="64" height="12"/><rect x="618" y="290" width="64" height="12"/><rect x="618" y="320" width="64" height="12"/>
+    </g>
+    <g fill="#9b9b98">
+      <rect x="340" y="70" width="20" height="22"/><rect x="490" y="40" width="20" height="22"/><rect x="640" y="70" width="20" height="22"/>
+    </g>
+  </g>
+</svg>

@@ -27,11 +27,11 @@ export default function PlatformPage() {
       </section>
 
       {MODULES.map((m, i) => (
-        <section key={m.n} className="screen border-t border-rule">
+        <section key={m.n} className="screen">
           <div className="grid-12 items-center gap-y-10">
             <div className={`col-span-12 md:col-span-5 ${i % 2 ? 'md:order-2 md:col-start-8' : ''}`}>
               <p data-reveal className="label text-mute">
-                <span className="mr-4 text-navy">{m.n}</span>Function
+                Function
               </p>
               <h2 data-reveal className="headline mt-8 text-[18vw] md:text-[8vw] 2xl:text-[132px]">
                 {m.title}
@@ -47,10 +47,10 @@ export default function PlatformPage() {
         </section>
       ))}
 
-      <section className="screen border-t border-rule">
+      <section className="screen">
         <div className="grid-12 gap-y-10">
           <p data-reveal className="label col-span-12 text-mute md:col-span-3">
-            <span className="mr-4 text-navy">04</span>Specification
+            Specification
           </p>
           <dl data-reveal className="col-span-12 border-t border-rule md:col-span-9">
             {SPECS.map((s) => (
@@ -63,7 +63,7 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      <section className="screen border-t border-rule">
+      <section className="screen">
         <div className="grid-12 gap-y-10">
           <h2 data-reveal className="headline col-span-12 text-[15vw] md:text-[9vw] 2xl:text-[150px]">
             Request a briefing
