@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 const components = {
   p: (p: React.ComponentProps<'p'>) => <p className="body mt-6 first:mt-0" {...p} />,
-  h2: (p: React.ComponentProps<'h2'>) => <h2 className="headline mt-14 text-4xl" {...p} />,
+  h2: (p: React.ComponentProps<'h2'>) => <h2 className="headline t-l mt-14" {...p} />,
   a: (p: React.ComponentProps<'a'>) => <a className="underline underline-offset-4" {...p} />,
 };
 
@@ -33,7 +33,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
 
   return (
     <article className="pb-28 md:pb-40">
-      <header className="grid-12 gap-y-8 pb-16 pt-20 md:pt-28">
+      <header className="grid-12 gap-y-8 pb-16 pt-36 md:pt-48">
         <p className="label col-span-12 text-mute">
           <Link href="/newsroom" className="hover:text-ink">
             Newsroom
@@ -41,7 +41,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
           <span className="mx-3">/</span>
           {post.category}
         </p>
-        <h1 className="headline col-span-12 text-[12vw] md:col-span-11 md:text-[7vw] 2xl:text-[116px]">{post.title}</h1>
+        <h1 className="headline t-xl col-span-12 md:col-span-11">{post.title}</h1>
         <time dateTime={post.date} className="label col-span-12 text-mute">
           {formatDate(post.date)}
         </time>

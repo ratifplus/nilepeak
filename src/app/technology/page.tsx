@@ -35,7 +35,7 @@ export default function TechnologyPage() {
 
       <section className="screen">
         <div className="grid-12 gap-y-10">
-          <h2 className="headline col-span-12 text-[15vw] md:text-[9vw] 2xl:text-[150px]">The Peak Station</h2>
+          <h2 className="headline t-l col-span-12">The Peak Station</h2>
           <div className="col-span-12">
             <Link href="/platform" className="link">
               Platform

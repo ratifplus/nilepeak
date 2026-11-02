@@ -23,7 +23,7 @@ export default function NewsroomPage() {
                     {formatDate(p.date)}
                   </time>
                   <span className="label col-span-6 text-mute md:col-span-1 md:pt-2">{p.category}</span>
-                  <span className="headline col-span-12 text-4xl md:col-span-9 md:text-6xl">{p.title}</span>
+                  <span className="headline t-l col-span-12 md:col-span-9">{p.title}</span>
                 </Link>
               </li>
             ))}

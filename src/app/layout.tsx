@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Barlow, Barlow_Condensed, Inter } from 'next/font/google';
+import { Arimo } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -7,9 +7,7 @@ import { Reveal } from '@/components/Reveal';
 import { getPostMetas } from '@/lib/news';
 import { site } from '@/lib/site';
 
-const barlow = Barlow_Condensed({ subsets: ['latin'], weight: '500', variable: '--font-barlow', display: 'swap' });
-const barlowText = Barlow({ subsets: ['latin'], weight: '500', variable: '--font-barlow-text', display: 'swap' });
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const arimo = Arimo({ subsets: ['latin'], variable: '--font-arimo', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -19,12 +17,12 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
 };
 
-export const viewport: Viewport = { themeColor: '#E6E6E4' };
+export const viewport: Viewport = { themeColor: '#EBEBEA' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const latest = getPostMetas()[0];
   return (
-    <html lang="en" className={`${barlow.variable} ${barlowText.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en" className={arimo.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>

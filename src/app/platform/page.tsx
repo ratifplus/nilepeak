@@ -19,9 +19,9 @@ export default function PlatformPage() {
   return (
     <>
       <section className="flex min-h-[calc(100svh-6rem)] flex-col">
-        <div className="grid-12 gap-y-6 pb-12 pt-20 md:pt-28">
+        <div className="grid-12 gap-y-6 pb-12 pt-36 md:pt-48">
           <p className="label col-span-12 text-mute">Platform</p>
-          <h1 className="headline col-span-12 text-[16vw] md:text-[11vw] 2xl:text-[180px]">The Peak Station</h1>
+          <h1 className="headline t-xl col-span-12">The Peak Station</h1>
         </div>
         <Plate kind="transformer" className="min-h-[50svh] w-full flex-1" priority />
       </section>
@@ -33,7 +33,7 @@ export default function PlatformPage() {
               <p data-reveal className="label text-mute">
                 Function
               </p>
-              <h2 data-reveal className="headline mt-8 text-[18vw] md:text-[8vw] 2xl:text-[132px]">
+              <h2 data-reveal className="headline t-l mt-8">
                 {m.title}
               </h2>
               <p data-reveal className="body mt-8 max-w-sm">
@@ -65,7 +65,7 @@ export default function PlatformPage() {
 
       <section className="screen">
         <div className="grid-12 gap-y-10">
-          <h2 data-reveal className="headline col-span-12 text-[15vw] md:text-[9vw] 2xl:text-[150px]">
+          <h2 data-reveal className="headline t-l col-span-12">
             Request a briefing
           </h2>
           <div data-reveal className="col-span-12">

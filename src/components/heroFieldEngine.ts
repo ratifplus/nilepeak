@@ -8,9 +8,9 @@
 
 const FIELD = {
   /** Peak displacement at the object, in CSS px. */
-  amplitude: 4.5,
+  amplitude: 3,
   /** Distance over which the field fades, as a fraction of hero height. */
-  falloff: 0.3,
+  falloff: 0.7,
   /** Ripple spacing in px and outward speed. */
   wavelength: 170,
   speed: 2.6,
@@ -163,7 +163,7 @@ export function startField(canvas: HTMLCanvasElement, source: HTMLElement, emitt
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, textCanvas);
     const e = emitter.getBoundingClientRect();
     gl.uniform2f(uRes, box.width, box.height);
-    gl.uniform2f(uEmit, e.left + e.width / 2 - box.left, box.height - (e.top + e.height * 0.42 - box.top));
+    gl.uniform2f(uEmit, e.left + e.width * 0.2 - box.left, box.height - (e.top + e.height * 0.55 - box.top));
   };
   layout();
 

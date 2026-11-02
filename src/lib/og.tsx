@@ -14,8 +14,8 @@ export function renderOg(title: string, kicker: string) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#E6E6E4',
-          color: '#2B2B29',
+          background: '#DADAD8',
+          color: '#464444',
           padding: '64px 72px',
           fontFamily: 'sans-serif',
         }}
@@ -26,7 +26,7 @@ export function renderOg(title: string, kicker: string) {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', height: 1, width: '100%', background: '#C9C9C6', marginBottom: 40 }} />
-          <div style={{ fontSize: 96, fontWeight: 500, lineHeight: 0.92, letterSpacing: -2, textTransform: 'uppercase' }}>{title}</div>
+          <div style={{ fontSize: 96, fontWeight: 700, lineHeight: 1, letterSpacing: -3 }}>{title}</div>
         </div>
       </div>
     ),
